@@ -1,0 +1,29 @@
+
+<html>    
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="game.js"></script>
+    </head>
+    <body>
+        <div ng-app="LD37App">
+            <div ng-controller="IncrementalCtrl">
+                <h1>Unsorted Mail: <span id="unsorted-count">{{unsortedMail | number: 0}}</span></h1>
+                <h1>Sorted Mail: <span id="sorted-count">{{sortedMail | number: 0}}</span></h1>
+                <button id="sort-mail" ng-click="sortMail()">Sort Mail</button>
+                <button id="deliver-mail" ng-click="deliverMail()">Deliver Mail</button>
+
+                <h2>Coin: {{coin | number: 0}}</h2>
+                <h2>Store:</h2>
+
+                <button id="sorter"
+                        ng-click="hireSorter()"
+                        ng-disabled="sorterCost > coin">Hire Sorter - {{sorterCost}}</button>
+                
+                <button id="carrier"
+                        ng-click="hireCarrier()"
+                        ng-disabled="carrierCost > coin">Hire Carrier - {{carrierCost}}</button>
+            </div>
+        </div>
+    </body>
+</html>
