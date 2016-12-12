@@ -1,1 +1,0 @@
-# mercy404.github.io
